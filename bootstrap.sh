@@ -1,8 +1,7 @@
 #!/bin/bash
 s3cmd="/usr/local/bin/s3cmd --config=/root/.s3cfg"
 s3name="stke-bootstrap"
-s3bucket="s3://$s3name/"
-s3https="https://s3.eu-central-1.amazonaws.com/$s3name/"
+s3bucket="s3://$s3name"
 file="bootstrap.dat"
 file_zip="bootstrap.zip"
 file_sha256="sha256.txt"
