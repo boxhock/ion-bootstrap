@@ -4,15 +4,13 @@ s3name="stke-bootstrap"
 s3bucket="s3://$s3name/"
 s3https="https://s3.eu-central-1.amazonaws.com/$s3name/"
 file="bootstrap.dat"
-file_zip="dash.zip"
+file_zip="bootstrap.zip"
 file_sha256="sha256.txt"
 
 # pass network name as a param
 do_the_job() {
   network=$1
-  date=`date -u`
-  date_fmt=`date -u +%Y-%m-%d`
-  s3currentPath="$s3bucket"
+  s3currentPath="$s3bucket/dash/"
   echo "$network job - Starting..."
   # process blockchain
   ./linearize-hashes.py linearize-$network.cfg > hashlist.txt
@@ -23,7 +21,8 @@ do_the_job() {
   sha256sum $file > $file_sha256
   sha256sum $file_zip >> $file_sha256
   # store
-  $s3cmd put $file_zip $file_sha256 $s3currentPath --acl-public
+  $s3cmd put $file_zip $file_sha256 $s3currentPath --acl-public --access_key=$(cat /root/aws/security/AWS_ACCESS_KEY) --secret_key=$(cat /root/aws/security/AWS_SECRET_KEY)
+  rm $file $file_zip $file_sha256 hashlist.txt
   echo "$network job - Done!"
 }
 
