@@ -12,7 +12,7 @@ do_the_job() {
   network=$1
   date=`date -u`
   date_fmt=`date -u +%Y-%m-%d`
-  s3currentPath="$s3bucket/"
+  s3currentPath="$s3bucket"
   echo "$network job - Starting..."
   # process blockchain
   ./linearize-hashes.py linearize-$network.cfg > hashlist.txt
