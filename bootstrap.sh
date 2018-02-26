@@ -21,7 +21,7 @@ do_the_job() {
   sha256sum $file > $file_sha256
   sha256sum $file_zip >> $file_sha256
   # store
-  $s3cmd put $file_zip $file_sha256 $s3currentPath --acl-public --access_key=$(cat /root/aws/security/AWS_ACCESS_KEY) --secret_key=$(cat /root/aws/security/AWS_SECRET_KEY)
+  $s3cmd put $file_zip $file_sha256 $s3currentPath --acl-public
   rm $file $file_zip $file_sha256 hashlist.txt
   echo "$network job - Done!"
 }
