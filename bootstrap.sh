@@ -9,7 +9,7 @@ file_sha256="sha256.txt"
 # pass network name as a param
 do_the_job() {
   network=$1
-  s3currentPath="$s3bucket/dash/"
+  s3currentPath="$s3bucket/ion/"
   echo "$network job - Starting..."
   # process blockchain
   ./linearize-hashes.py linearize-$network.cfg > hashlist.txt
@@ -27,5 +27,5 @@ do_the_job() {
 
 # mainnet
 #cat ~/.dash/blocks/blk0000* > $file
-blocks=`dash-cli getblockcount`
+blocks=`iond getblockcount`
 do_the_job mainnet
