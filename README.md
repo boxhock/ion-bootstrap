@@ -9,3 +9,12 @@
  - Unix/Linux: ~/.ioncoin/
 3. Run your wallet and let it sync using bootstrap.dat
 4. Once sync is done bootstrap.dat file will be renamed to bootstrap.dat.old automagically and can be safely removed.
+
+### Download
+
+A daily bootstrap.dat file is generated and hosted by [Stke](https://stke.io). Please consider supporting Stke if you find this helpful.
+
+| Filename        | Download URL
+| --------------- | --------
+| `bootstrap.zip` | https://s3.eu-central-1.amazonaws.com/stke-bootstrap/ion/bootstrap.zip
+| `sha256.txt`    | https://s3.eu-central-1.amazonaws.com/stke-bootstrap/ion/sha256.txt
