@@ -175,7 +175,7 @@ class BlockDataCopier:
 					(self.blkCountIn, self.blkCountOut, len(self.blkindex), 100.0 * self.blkCountOut / len(self.blkindex)))
 
 	def inFileName(self, fn):
-		return os.path.join(self.settings['input'], "blk%05d.dat" % fn)
+		return os.path.join(self.settings['input'], "blk%04d.dat" % (fn+1))
 
 	def fetchBlock(self, extent):
 		'''Fetch block contents from disk given extents'''
