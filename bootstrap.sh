@@ -26,6 +26,4 @@ do_the_job() {
 }
 
 # mainnet
-#cat ~/.dash/blocks/blk0000* > $file
-blocks=`iond getblockcount`
 do_the_job mainnet
